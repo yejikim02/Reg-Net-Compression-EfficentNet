@@ -12,10 +12,12 @@ from .layers import DownBlock, Conv, ResnetTransformer
 sampling_align_corners = False
 
 # The number of filters in each block of the encoding part (down-sampling).
-ndf = {'A': [32, 64, 64, 64, 64, 64, 64], }
+# ndf = {'A': [32, 64, 64, 64, 64, 64, 64], }
+ndf = {'A': [32, 64, 64, 64], }
+
 # The number of filters in each block of the decoding part (up-sampling).
 # If len(ndf[cfg]) > len(nuf[cfg]) - then the deformation field is up-sampled to match the input size.
-nuf = {'A': [64, 64, 64, 64, 64, 64, 32], }
+nuf = {'A': [64, 64, 64, 32], }
 # Indicate if res-blocks are used in the down-sampling path.
 use_down_resblocks = {'A': True, }
 # indicate the number of res-blocks applied on the encoded features.
